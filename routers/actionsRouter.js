@@ -16,7 +16,7 @@ router.get('/', (req, res, next) => {
 })
 
 //POST
-router.get('/', (req, res, next) => {
+router.post('/', (req, res, next) => {
     db.insert(req.body)
       .then(response => {
           res.json(response)
