@@ -15,6 +15,18 @@ router.get('/', (req, res, next) => {
       })
 })
 
+//GET by ID
+
+router.get("/:id", validateId(), (req, res, next) => {
+    db.getProjectActions(req.params.id)
+      .then(response => {
+        res.json(response);
+      })
+      .catch(err => {
+        next(err);
+      });
+  });
+
 //POST
 router.post('/', (req, res, next) => {
     db.insert(req.body)
