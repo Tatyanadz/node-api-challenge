@@ -17,7 +17,7 @@ router.get('/', (req, res, next) => {
 
 //GET by ID
 
-router.get("/:id", validateId(), (req, res, next) => {
+router.get("/:id/actions", validateId(), (req, res, next) => {
     db.getProjectActions(req.params.id)
       .then(response => {
         res.json(response);

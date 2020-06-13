@@ -1,7 +1,7 @@
 const logger = require('./middleware/logger')
 
 const server = require("./api/server")
-const port = 4000
+const port = process.env.PORT || 4000
 
 
 server.use(logger('long'))
